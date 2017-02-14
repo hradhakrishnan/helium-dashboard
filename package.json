@@ -1,0 +1,27 @@
+{
+  "name": "azqna",
+  "version": "0.0.1",
+  "private": true,
+  "description": "IOT dashboard",
+  "author": {
+    "name": "Hari",
+    "email": "hariprasad.radhakrishnan@astrazeneca.com",
+    "homepage": "https://github.com/hradhakrishnan"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-material": "^1.0.9",
+    "body-parser": "^1.15.2",
+    "config": "^1.21.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "moment": "^2.17.1",
+    "path": "^0.12.7",
+    "request": "^2.72.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Helium": {
+    "api": {
+      "url" :"https://api.helium.com/v1/sensor",
+      "User": "xxxxxxxxxxxxxx",
+      "key": "xxxxxxxxxxxxxx"
+    }
+  }
+}

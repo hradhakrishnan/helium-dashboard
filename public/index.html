@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>IOT</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,100,100italic,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Angular Material style sheet -->
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,100,100italic,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/main.css" rel="stylesheet" />
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="https://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="/javascripts/script.js" type="text/javascript"></script>
+
+
+</head>
+
+<body ng-app="helium">
+
+  <div id="container" ng-controller="tdata as vm">
+     <div id="header">
+
+         <div class="row">
+           <div class="col-md-2">
+             <span  layout-gt-sm="row" layout-padding>
+                <img src="/images/askaz.png" style="height:48px;width:48px"/>
+              </span>
+
+           </div>
+           <div class="col-md-8">
+             <div id='search'>
+           <label><input ng-model="searchText" ></label></div>
+         </div>
+        <div class="col-md-2">
+          <button class="md-fab md-button md-ink-ripple md-mini" type="button"  aria-label="Comment" ng-click="ask();"><md-icon class="material-icons">refresh</md-icon></button>
+        </div>
+      </div>
+     </div>
+     <div id="body">
+       <div class="row">
+     <md-tabs md-dynamic-height md-border-bottom>
+       <md-tab label="Helium Sensors">
+               <md-content>
+                 <div class="col-md-12">
+                   <md-content flex layout="row" id="chat">
+                          <div class="row">
+                           <div ng-repeat="item in vm.messages | filter:searchText" class="col-md-3">
+                          <md-card>
+                          <md-card-title>
+                          <md-card-title-text>
+                            <span id="sensorname">{{item.Name}}</span>
+                            <span class="md-subhead">{{item.lastseen | fromNow}}</span>
+                          </md-card-title-text>
+                          </md-card-title>
+                          <md-card-content layout="row" >
+                          <div class="card-media">
+                            <div id='sensordata'><img src="/images/thermometer.png" style="max-height:32px;max-width:32px"/><span id='sensorvalue'>{{item.message | number : 2}} &#x00B0; C</span></div><br>
+                            <!-- <div><img src="/images/humidity.png" style="max-height:32px;max-width:32px"/>  Humidity  <span class="md-headline">{{item.message}}</span></div><br>
+                            <div><img src="/images/pressure.png" style="max-height:32px;max-width:32px"/>  Pressure  <span class="md-headline">{{item.message}}</span></div><br>
+                            <div><img src="/images/light-bulb.png" style="max-height:32px;max-width:32px"/>  Light  <span class="md-headline">{{item.message}}</span></div><br>
+                            <div><img src="/images/motion.png" style="max-height:32px;max-width:32px"/>  Motion <span class="md-headline">{{item.message}}</span></div><br>
+                            <div><img src="/images/battery.png" style="max-height:18px;max-width:18px"/>  2.8 v</div> -->
+                          </div>
+                          </md-card-content>
+                          <md-card-actions layout="row" layout-align="end center">
+                            <div class="news blue"><span><md-icon class="material-icons">history</md-icon></span><ul><li ng-repeat="item in item.temperature">{{item.lastseen | fromNow}} : {{item.temp | number : 2}} &#x00B0; C</li></ul></div>
+                          </md-card-actions>
+                        </md-card>
+                          </div></div>
+                       </md-content>
+               </md-content>
+             </md-tab>
+       </md-tabs>
+
+
+
+
+
+         <div id="footer">
+           <div class="footer-container">
+               <div class="container">
+                   <footer class="footer ">
+                       <div class="row">
+                           <!-- <div class="col-xs-3 text-left">
+                               <img class="img-fluid hidden-sm hidden-xs" src="/images/CTOLogo.png" />
+                           </div> -->
+                           <div class="col-xs-9 text-left">
+                               <span id="footerTC">IOT dashboard prototype - Hari</span>
+                           </div>
+                           <div class="col-xs-3 text-right">
+                           </div>
+                       </div>
+                   </footer>
+               </div>
+           </div>
+         </div>
+     </div><!-- /container -->
+</html>

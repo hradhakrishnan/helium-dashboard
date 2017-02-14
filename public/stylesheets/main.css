@@ -1,0 +1,214 @@
+/* Space out content a bit */
+html,body {
+    background-color: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+
+@media (max-width: 767px) {
+    .rightCol .card, .leftCol .card {
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+}
+#header {
+   background:#22313F;
+   padding:2px;
+}
+#body {
+   padding:0px;
+   padding-bottom:0px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   padding-top: 10px;
+   height:80px;   /* Height of the footer */
+   color: #ecf0f1;
+   background-color: #22313F;
+   margin-top: 20px;
+}
+
+
+#chat {
+  max-height: 100%;
+  min-height:500px;
+  padding-left: 5px;
+  padding-bottom: 50px;
+  text-align: left;
+  /*overflow-y: scroll;*/
+  margin-bottom: 20px;
+}
+
+
+#search {
+  padding: 10px 10px 10px 10px;
+  color: #ecf0f1;
+
+  border-radius: 4px;
+}
+
+input{
+-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+  border-radius: 40px;
+  color: #2574A9;
+  padding: 0px 5px 5px 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  outline: none;
+}
+
+
+md-list {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+md-list-item {
+  background-color: #2574A9;
+  width: 100%;
+  min-height:50px;
+  color:#ecf0f1;
+  margin-bottom: 5px;
+  border: 2px solid;
+    border-radius: 20px;
+}
+
+md-card {
+  width:100%;
+  /*min-width:340px;*/
+  /*height:600px;*/
+  background-color: #049372;
+  color: #ecf0f1;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+md-card-content {
+}
+
+md-headline{
+  text-align: right;
+  font-size: 48px;
+}
+md-card-title {
+  max-height: 200px;
+}
+md-content {
+background-color: #ecf0f1;
+
+}
+
+md-card-actions {
+  background-color: #34495E;
+  margin: 0px !important;
+  color:#1E8BC3;
+
+}
+
+#sensorvalue{
+font-size: 42px;
+margin-left: 15px;
+top: 15px;
+}
+
+#sensorname {
+font-size: 18px;
+}
+
+#sensordata{
+  /*background-color: #22313F;*/
+  padding: 5px 5px 5px 5px;
+}
+
+card-media{
+min-width:100% !important;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+
+    .seemore:hover {
+        cursor: pointer;
+    }
+
+    @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+    @keyframes ticker {
+      0%   {margin-top: 0}
+      10%  {margin-top: -30px}
+      20%  {margin-top: -60px}
+      30%  {margin-top: -90px}
+      40%  {margin-top: -120px}
+      50%  {margin-top: -150px}
+      60%  {margin-top: -180px}
+      70%  {margin-top: -210px}
+      80%  {margin-top: -240px}
+      90%  {margin-top: -270px}
+      100% {margin-top: 0}
+    }
+    /*@keyframes ticker {
+    	0%   {margin-top: 0}
+    	25%  {margin-top: -30px}
+    	50%  {margin-top: -60px}
+    	75%  {margin-top: -90px}
+    	100% {margin-top: 0}
+    }*/
+
+    .news {
+      /*box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);*/
+      width: 100%;
+      height: 32px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 4px;
+      padding: 5px;
+      -webkit-user-select: none;
+      font-size: 16px;
+      color: #FFFFFF;
+    }
+
+ .news span {
+  float: left;
+  color: #fff;
+  padding: 2px;
+  margin-left: 5px;
+  position: relative;
+  top: 1%;
+  border-radius: 4px;
+  /*box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);*/
+  font: 16px 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer
+}
+
+.news ul {
+  float: left;
+  padding-left: 10px;
+  animation: ticker 10s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.news ul li {line-height: 30px; list-style: none }
+
+.news ul:hover { animation-play-state: paused }
+.news span:hover+ul { animation-play-state: paused }
+
+/*.blue { background: #019875 }*/
