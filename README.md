@@ -11,4 +11,4 @@ This is a prototype and not a production application, as such no security has be
 Bugs and Issues
 Prototype - Error Handling is not complete
 
-![alt text](https://raw.githubusercontent.com/hradhakrishnan/helium-dashboard/Helium_dashboard.png)
+![alt text](https://github.com/hradhakrishnan/helium-dashboard/blob/master/Helium_dashboard.png)
